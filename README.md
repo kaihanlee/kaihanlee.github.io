@@ -2,6 +2,8 @@
 
 Main page can be found at https://kaihanlee.github.io. 
 
+<h6> Pages </h6>
+
 index.html: The main page when clicked on link \
 about.html: About me page (biography, portrait pic, skills) \
 experiences.html: Past experiences (reverse chronological order, group photos) \
