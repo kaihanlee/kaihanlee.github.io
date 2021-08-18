@@ -2,8 +2,8 @@
 
 Main page can be found at https://kaihanlee.github.io. 
 
-index.html: The main page when clicked on link
-about.html: About me page (biography, portrait pic, skills)
+index.html: The main page when clicked on link\n
+about.html: About me page (biography, portrait pic, skills)\n
 experiences.html: Past experiences (reverse chronological order, group photos)
 projects.html: Projects in blocks ("+" to enlarge image, chain symbol to go to GitHub)
 blog.html: Blog in blocks ("+" to enlarge image, chain symbol to go to Weebly)
