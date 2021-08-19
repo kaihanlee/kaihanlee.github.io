@@ -1,0 +1,7 @@
+Steps to add new blog
+1. Open blog.html in editor
+2. Duplicate template
+3. Upload image as "assets/img/blog/image.jpg" (change .jpg file name)
+4. Copy link of blog
+5. Edit template accordingly
+6. Commit and push
