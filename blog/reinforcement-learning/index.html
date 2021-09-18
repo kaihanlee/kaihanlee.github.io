@@ -77,29 +77,24 @@
                     <p>AlphaGo developers decided to improve AlphaGo's algorithm more by implementing the reinforcement learning model, in which AlphaGo will play games against itself to improve its play. Just like a reward and punishment system for humans. A winning episode is a reward and the losing episode is a punishment.</p><br>
                     <p>So, with reinforcement learning, AlphaGo can run as many scenarios as its developers wish to maximize its rewards, in other words, generate as many winning episodes as possible. Unlike supervised learning, this time AlphaGo can actually be better than humans.</p><br>
 
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt=""></p>
-                    <br>
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt=""></p><br>
 
                     <h3>Example Using Pong</h3>
-                    <p>The most common example used to explain reinforcement learning, Pong.</p>
-                    <p>In supervised learning, historical human gameplay frames are input to the neural network and the model will decide the best output after analyzing billions of frames. In reinforcement learning, the input is the model's own decision, whether to go up or down, the model will decide randomly.</p>
-                    <p>After a decision is made, it will result in either a win or a loss. This will be reflected in the scoreboard. With the reward and punishment system in place, the model's only aim is to maximize its reward, or in other words, win as many times as possible.</p>
-                    <p>To make reinforcement learning more efficient, a policy gradient is implemented in the hidden layers. By winning a game, the policy gradient will increase the probability of the actions taken in the winning episode, and by losing a game, the policy gradient will multiply the -1 to the gradient to reduce the probability of the actions taken in the losing episode.</p>
-                    <br>
+                    <p>The most common example used to explain reinforcement learning, Pong.</p><br>
+                    <p>In supervised learning, historical human gameplay frames are input to the neural network and the model will decide the best output after analyzing billions of frames. In reinforcement learning, the input is the model's own decision, whether to go up or down, the model will decide randomly.</p><br>
+                    <p>After a decision is made, it will result in either a win or a loss. This will be reflected in the scoreboard. With the reward and punishment system in place, the model's only aim is to maximize its reward, or in other words, win as many times as possible.</p><br>
+                    <p>To make reinforcement learning more efficient, a policy gradient is implemented in the hidden layers. By winning a game, the policy gradient will increase the probability of the actions taken in the winning episode, and by losing a game, the policy gradient will multiply the -1 to the gradient to reduce the probability of the actions taken in the losing episode.</p><br>
 
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/main.jpg" alt=""></p>
-                    <br>
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/main.jpg" alt=""></p><br>
 
                     <h3>Downside of Reinforcement Learning</h3>
                     <ol>
                         <li>Credit Assignment Problem: Reinforcement learning will record the whole episode as a good/bad move even though only 1 good/bad move is made.</li>
                         <li>Sparse Reward Setting: When an extremely complicated action sequence is required to complete the task, the reinforcement learning model might require a whole lot of samples just to get one successful attempt. To solve this issue, a reward setting can be done. With the Pong example, a reward setting can be as simple as returning the ball 3 consecutive times. But this is not effective long term, new reward settings have to be done as the model improves.</li>
                         <li>The Alignment Problem: When the model does not align with what the developer wants but gets rewarded anyways. The model happens to find ways to get rewarded by doing something meaningless repeatedly like collecting bonus coins instead of achieving the long term goal like completing the race. That is when the model is overfitting.</li>
-                    </ol>
-                    <br>
+                    </ol><br>
 
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/2.png" alt=""></p>
-                    <br>
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/2.png" alt=""></p><br>
 
                     <p>With reinforcement learning at the cutting-edge right now, experts believe it can eventually bring researchers closer to Artificial General Intelligence (AGI). It is still hard to predict how will reinforcement learning develop in the future, but there are still improvements to be made, and one example is its sample complexity.</p>
 
