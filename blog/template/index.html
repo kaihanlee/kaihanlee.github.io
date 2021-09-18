@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blog - Lee Kai Han Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img src="/assets/img/profile-image.jpg" alt="" class="img-fluid rounded-circle">
+                <h1 class="text-light"><a href="/#">Lee Kai Han</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a href="https://www.linkedin.com/in/kaihanlee/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/kaihanlee" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+
+                </div>
+            </div>
+
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="/#"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                    <li><a href="/about"><i class="bx bx-user"></i> <span>About Me</span></a></li>
+                    <li><a href="/experiences"><i class="bx bx-file-blank"></i> <span>Experiences</span></a></li>
+                    <li><a href="/projects"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+                    <li><a href="/blog"><i class="bx bx-pencil"></i> <span>Blog</span></a></li>
+                    <li><a href="/contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h1>Reinforcement Learning: The AI Model Behind AlphaGo</h1>
+                    <em>12 September 2021, 4 mins read</em>
+                    <br><br>
+
+                    <p>Between 9-15 March 2016, AlphaGo defeated 18-time Go world champion Lee Sedol 4-1. AlphaGo is a computer program that plays the board game Go.</p><br>
+                    <p>AlphaGo is initially built on a deep learning model by using solely data from past human and computer play. The neural network identifies the best moves and winning probability to make decisions of the next moves. At this point, AlphaGo will only make moves based on historical wins, this is known as supervised learning.</p><br>
+                    <p>AlphaGo developers decided to improve AlphaGo's algorithm more by implementing the reinforcement learning model, in which AlphaGo will play games against itself to improve its play. Just like a reward and punishment system for humans. A winning episode is a reward and the losing episode is a punishment.</p><br>
+                    <p>So, with reinforcement learning, AlphaGo can run as many scenarios as its developers wish to maximize its rewards, in other words, generate as many winning episodes as possible. Unlike supervised learning, this time AlphaGo can actually be better than humans.</p><br>
+
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt=""></p><br>
+
+                    <h3>Example Using Pong</h3>
+                    <p>The most common example used to explain reinforcement learning, Pong.</p><br>
+                    <p>In supervised learning, historical human gameplay frames are input to the neural network and the model will decide the best output after analyzing billions of frames. In reinforcement learning, the input is the model's own decision, whether to go up or down, the model will decide randomly.</p><br>
+                    <p>After a decision is made, it will result in either a win or a loss. This will be reflected in the scoreboard. With the reward and punishment system in place, the model's only aim is to maximize its reward, or in other words, win as many times as possible.</p><br>
+                    <p>To make reinforcement learning more efficient, a policy gradient is implemented in the hidden layers. By winning a game, the policy gradient will increase the probability of the actions taken in the winning episode, and by losing a game, the policy gradient will multiply the -1 to the gradient to reduce the probability of the actions taken in the losing episode.</p><br>
+
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/main.jpg" alt=""></p><br>
+
+                    <h3>Downside of Reinforcement Learning</h3>
+                    <ol>
+                        <li>Credit Assignment Problem: Reinforcement learning will record the whole episode as a good/bad move even though only 1 good/bad move is made.</li>
+                        <li>Sparse Reward Setting: When an extremely complicated action sequence is required to complete the task, the reinforcement learning model might require a whole lot of samples just to get one successful attempt. To solve this issue, a reward setting can be done. With the Pong example, a reward setting can be as simple as returning the ball 3 consecutive times. But this is not effective long term, new reward settings have to be done as the model improves.</li>
+                        <li>The Alignment Problem: When the model does not align with what the developer wants but gets rewarded anyways. The model happens to find ways to get rewarded by doing something meaningless repeatedly like collecting bonus coins instead of achieving the long term goal like completing the race. That is when the model is overfitting.</li>
+                    </ol><br>
+
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/2.png" alt=""></p><br>
+
+                    <p>With reinforcement learning at the cutting-edge right now, experts believe it can eventually bring researchers closer to Artificial General Intelligence (AGI). It is still hard to predict how will reinforcement learning develop in the future, but there are still improvements to be made, and one example is its sample complexity.</p>
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="credits">
+                <span>&copy</span> Designed by <strong>Lee Kai Han</strong>
+                <div class="credits">
+                    Powered by BootstrapMade
+                </div>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/typed.js/typed.min.js"></script>
+    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
