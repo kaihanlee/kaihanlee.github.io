@@ -76,7 +76,7 @@
                     <p>Even though correlation and causation can exist at the same time, it is important not to assume that correlation implies causation and therefore, we need to look beyond statistics and understand the situation behind. </p><br>
                     <p>Simpson's Paradox is used in a lot of fields, such as medical trials, sports statistics, etc. This paradox has also been used to compare the COVID-19 fatality rates among countries, the result has shown that even though some countries have high fatality rates than others, they have lower fatality rates when the demographic is broken down by age, as these countries have higher proportion of older patients. </p><br>
 
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt=""></p><br>
+                    <p style="text-align:center;"><img src="/blog/simpsons-paradox/img/2.jpg" alt=""></p><br>
 
                     <h3>Example</h3>
                     <p>We can use a simple college admission example. I am using an extreme range to make this example easier to be understood. </p><br>
@@ -132,16 +132,13 @@
                       </tr>
                     </table>
 
-                    <h3>Downside of Reinforcement Learning</h3>
-                    <ol>
-                        <li>Credit Assignment Problem: Reinforcement learning will record the whole episode as a good/bad move even though only 1 good/bad move is made.</li>
-                        <li>Sparse Reward Setting: When an extremely complicated action sequence is required to complete the task, the reinforcement learning model might require a whole lot of samples just to get one successful attempt. To solve this issue, a reward setting can be done. With the Pong example, a reward setting can be as simple as returning the ball 3 consecutive times. But this is not effective long term, new reward settings have to be done as the model improves.</li>
-                        <li>The Alignment Problem: When the model does not align with what the developer wants but gets rewarded anyways. The model happens to find ways to get rewarded by doing something meaningless repeatedly like collecting bonus coins instead of achieving the long term goal like completing the race. That is when the model is overfitting.</li>
-                    </ol><br>
+                    <p>When the data is disaggregated as above, we can observe a totally opposite interpretation. School B has higher admission rates for both male and female. </p><br>
+                    <p>It is observed that if an applicant, doesn't matter male or female, wants to be admitted into a school, any school, they will have a higher chance if they apply to School B. However, when the data is aggregated, we see that School A has a far higher rate of admission than School B. </p><br>
+                    <p>On the other hand, if the interpretations before and after disaggregation are the same, then Simpson's Paradox is invalid. </p>
 
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/2.png" alt=""></p><br>
+                    <p style="text-align:center;"><img src="/blog/simpsons-paradox/img/1.png" alt=""></p><br>
 
-                    <p>With reinforcement learning at the cutting-edge right now, experts believe it can eventually bring researchers closer to Artificial General Intelligence (AGI). It is still hard to predict how will reinforcement learning develop in the future, but there are still improvements to be made, and one example is its sample complexity.</p>
+                    <p>Conclusion</p>
 
                 </div>
 
