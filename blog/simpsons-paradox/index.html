@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blog - Lee Kai Han Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img src="/assets/img/profile-image.jpg" alt="" class="img-fluid rounded-circle">
+                <h1 class="text-light"><a href="/#">Lee Kai Han</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a href="https://www.linkedin.com/in/kaihanlee/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/kaihanlee" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+
+                </div>
+            </div>
+
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="/#"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                    <li><a href="/about"><i class="bx bx-user"></i> <span>About Me</span></a></li>
+                    <li><a href="/experiences"><i class="bx bx-file-blank"></i> <span>Experiences</span></a></li>
+                    <li><a href="/projects"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+                    <li><a href="/blog"><i class="bx bx-pencil"></i> <span>Blog</span></a></li>
+                    <li><a href="/contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h1>Simpson's Paradox</h1>
+                    <em>09 October 2021, 4 mins read</em>
+                    <br><br>
+
+                    <p>The Simpson's Paradox is one statistical concept that can be used to explain misinterpretation of data. It involves the aggregation or disaggregation of data to show the reversal of interpretation. For example, the audience may agree that the aggregated data has a positive correlation, but when broken down by demographics such as age, household income, or other metrics, such as location, temperature, the audience sees a reversal of interpretation, i.e. negative correlation, or vice versa. This is usually due to the fact that the aggregated data hides a conditional variable. </p><br>
+                    <p>Even though correlation and causation can exist at the same time, it is important not to assume that correlation implies causation and therefore, we need to look beyond statistics and understand the situation behind. </p><br>
+                    <p>Simpson's Paradox is used in a lot of fields, such as medical trials, sports statistics, etc. This paradox has also been used to compare the COVID-19 fatality rates among countries, the result has shown that even though some countries have high fatality rates than others, they have lower fatality rates when the demographic is broken down by age, as these countries have higher proportion of older patients. </p><br>
+
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt=""></p><br>
+
+                    <h3>Example</h3>
+                    <p>We can use a simple college admission example. I am using an extreme range to make this example easier to be understood. </p><br>
+                    <p>Suppose we have two schools, School A and School B, with equal number of applicants, 105. The table below shows the number of successful admissions and their percentages. </p><br>
+
+                    <table>
+                      <tr>
+                        <th> </th>
+                        <th>School A</th>
+                        <th>School B</th>
+                      </tr>
+                      <tr>
+                        <td># of applicants</td>
+                        <td>105</td>
+                        <td>105</td>
+                      </tr>
+                      <tr>
+                        <td># of successful admissions</td>
+                        <td>98</td>
+                        <td>55</td>
+                      </tr>
+                      <tr>
+                        <td>Admission Rate (%)</td>
+                        <td>93.3%</td>
+                        <td>52.4%</td>
+                      </tr>
+                    </table>
+
+                    <h3>Downside of Reinforcement Learning</h3>
+                    <ol>
+                        <li>Credit Assignment Problem: Reinforcement learning will record the whole episode as a good/bad move even though only 1 good/bad move is made.</li>
+                        <li>Sparse Reward Setting: When an extremely complicated action sequence is required to complete the task, the reinforcement learning model might require a whole lot of samples just to get one successful attempt. To solve this issue, a reward setting can be done. With the Pong example, a reward setting can be as simple as returning the ball 3 consecutive times. But this is not effective long term, new reward settings have to be done as the model improves.</li>
+                        <li>The Alignment Problem: When the model does not align with what the developer wants but gets rewarded anyways. The model happens to find ways to get rewarded by doing something meaningless repeatedly like collecting bonus coins instead of achieving the long term goal like completing the race. That is when the model is overfitting.</li>
+                    </ol><br>
+
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/2.png" alt=""></p><br>
+
+                    <p>With reinforcement learning at the cutting-edge right now, experts believe it can eventually bring researchers closer to Artificial General Intelligence (AGI). It is still hard to predict how will reinforcement learning develop in the future, but there are still improvements to be made, and one example is its sample complexity.</p>
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="credits">
+                <span>&copy</span> Designed by <strong>Lee Kai Han</strong>
+                <div class="credits">
+                    Powered by BootstrapMade
+                </div>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/typed.js/typed.min.js"></script>
+    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
