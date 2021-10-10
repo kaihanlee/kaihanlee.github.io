@@ -226,7 +226,7 @@ img {
 }
 
 #hero-error {
-  width: 80%;
+  width: 50%;
   height: 100vh;
   background: url("../img/error.gif") top right;
   background-size: cover;
