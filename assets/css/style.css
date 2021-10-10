@@ -225,6 +225,13 @@ img {
   background-size: cover;
 }
 
+#hero-error {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/error.gif") top right;
+  background-size: cover;
+}
+
 #hero:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
@@ -237,6 +244,12 @@ img {
 }
 
 #hero .hero-container {
+  position: relative;
+  z-index: 2;
+  min-width: 300px;
+}
+
+#hero-error .hero-error-container {
   position: relative;
   z-index: 2;
   min-width: 300px;
