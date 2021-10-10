@@ -253,6 +253,7 @@ img {
   position: relative;
   z-index: 2;
   min-width: 300px;
+  right: -200px;
 }
 
 #hero h1 {
@@ -263,7 +264,22 @@ img {
   color: #fff;
 }
 
+#hero-error h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
 #hero p {
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero-error p {
   color: #fff;
   margin-bottom: 50px;
   font-size: 26px;
