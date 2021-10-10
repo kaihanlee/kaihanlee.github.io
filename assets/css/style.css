@@ -229,7 +229,7 @@ img {
   position: relative;
   right: -290px;
   width: 86%;
-  height: 100vh;
+  height: 100%;
   background: url("../img/error.gif") top right;
   background-size: cover;
   overflow: hidden;
