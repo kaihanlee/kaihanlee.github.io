@@ -226,7 +226,7 @@ img {
 }
 
 #hero-error {
-  position: static;
+  position: relative;
   right: -330px;
   width: 85%;
   height: 100vh;
