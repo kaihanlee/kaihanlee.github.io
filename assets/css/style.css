@@ -787,6 +787,7 @@ section {
     padding-right: .45em;
     padding-left: .45em;
     font-size: 15px;
+    content:'\00B7';
 }
 *, *::before, *::after {
     box-sizing: border-box;
