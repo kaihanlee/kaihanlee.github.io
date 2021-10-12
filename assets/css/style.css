@@ -788,9 +788,10 @@ section {
     padding-left: .45em;
     font-size: 15px;
 }
-*, *::before, *::after {
-    box-sizing: border-box;
+
+.middot-divider::after {
     content:'\00B7';
+    box-sizing: border-box;
 }
 
 .article-metadata {
