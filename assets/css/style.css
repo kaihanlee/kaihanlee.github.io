@@ -773,7 +773,14 @@ section {
 }
 
 .article-title a {
-    color:#151515;transition:color 0.6s ease
+    color:#151515;
+    transition:color 0.6s ease
+}
+
+.article-title a:hover{
+    color:#4096b8;
+    text-decoration:none;
+    transition:color 0.6s ease
 }
 
 .middot-divider::after {
