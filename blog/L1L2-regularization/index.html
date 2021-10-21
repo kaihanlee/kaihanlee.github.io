@@ -95,11 +95,11 @@
 
                     <h3>L1 Regularization (Lasso Regression)</h3>
                     <p>L1 regularization is used when there is a high amount of features which needs to be reduced via feature selection. <a href="https://stats.stackexchange.com/questions/45643/why-l1-norm-for-sparse-models">Here's a direct explanation on how L1 enforces sparsity. </a>Lasso regression minimizes the sum of squared residuals plus the product of lambda and the absolute value of weights of coefficients, which is the lasso regression regularization term.</p>
-                    <p>$$$$</p>
+                    <p>$$Cost = \sum^N_{i=0}(y_i - \sum^M_{j=0}x_{ij}W_j)^2 + \lambda \sum^M_{j=0}|W_j|$$</p>
 
                     <h3>L2 Regularization (Ridge Regression)</h3>
                     <p>L2 regularization is used when independent variables are highly correlated (strong multicollinearity). Ridge regression minimizes the sum of squared residuals plus the product of lambda and the squared weights of coefficients, which is the ridge regression regularization term. </p>
-                    <p>$$$$</p>
+                    <p>$$Cost = \sum^N_{i=0}(y_i - \sum^M_{j=0}x_{ij}W_j)^2 + \lambda \sum^M_{j=0}W_j^2$$</p>
 
                     <h3>On Distinct Data and Logistic Regression</h3>
                     <p>L1 and L2 regularizations work on distinct variables and logistic regression too. The regression formula will be \(Y = a + bX\), where \(a\) is the weighted average of the first variable and \(b\) is the coefficient for the second variable. </p><br>
