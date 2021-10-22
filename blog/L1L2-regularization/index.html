@@ -87,18 +87,18 @@
                     <p>There are two types of regularizations, L1 Regularization which is used in Lasso Regression, and L2 Regularization which is used in Ridge Regression.</p><br>
 
                     <h3>Bias-Variance Trade-Off</h3>
-                    <p>Let \lambda be the penalty term. As \lambda increases, bias increases, variance decreases. This trend needs to be utilized in order to make regularization work. We will increase \lambda to increase bias of the model, directly reducing overfitting on the training data, hence decreasing variance on the test data and the model. </p><br>
+                    <p>Let \(\lambda\) be the penalty term. As \(\lambda\) increases, bias increases, variance decreases. This trend needs to be utilized in order to make regularization work. We will increase \(\lambda\) to increase bias of the model, directly reducing overfitting on the training data, hence decreasing variance on the test data and the model. </p><br>
 
                     <h3>Assumptions</h3>
                     <p>As usual, the observations are independent and identically distributed, have constant variance. </p><br>
                     <p>It is worth highlighting that when sum of squared residuals is mentioned, it is calculated with the ordinary least squares method (constraint on y). </p><br>
 
                     <h3>L1 Regularization (Lasso Regression)</h3>
-                    <p>L1 regularization is used when there is a high amount of features which needs to be reduced via feature selection. <a href="https://stats.stackexchange.com/questions/45643/why-l1-norm-for-sparse-models">Here's a direct explanation on how L1 enforces sparsity. </a>Lasso regression minimizes the sum of squared residuals plus the product of \lambda and the absolute value of weights of coefficients, which is the lasso regression regularization term.</p>
+                    <p>L1 regularization is used when there is a high amount of features which needs to be reduced via feature selection. <a href="https://stats.stackexchange.com/questions/45643/why-l1-norm-for-sparse-models">Here's a direct explanation on how L1 enforces sparsity. </a>Lasso regression minimizes the sum of squared residuals plus the product of \(\lambda\) and the absolute value of weights of coefficients, which is the lasso regression regularization term.</p>
                     <p>$$Cost = \sum^N_{i=0}(y_i - \sum^M_{j=0}x_{ij}W_j)^2 + \lambda \sum^M_{j=0}|W_j|$$</p><br>
 
                     <h3>L2 Regularization (Ridge Regression)</h3>
-                    <p>L2 regularization is used when independent variables are highly correlated (strong multicollinearity). Ridge regression minimizes the sum of squared residuals plus the product of \lambda and the squared weights of coefficients, which is the ridge regression regularization term. </p>
+                    <p>L2 regularization is used when independent variables are highly correlated (strong multicollinearity). Ridge regression minimizes the sum of squared residuals plus the product of \(\lambda\) and the squared weights of coefficients, which is the ridge regression regularization term. </p>
                     <p>$$Cost = \sum^N_{i=0}(y_i - \sum^M_{j=0}x_{ij}W_j)^2 + \lambda \sum^M_{j=0}W_j^2$$</p><br>
 
                     <h3>On Distinct Data and Logistic Regression</h3>
