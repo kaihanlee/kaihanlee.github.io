@@ -71,26 +71,66 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h1>Title</h1>
-                    <em>12 September 2021, 4 mins read</em>
+                    <h1>Auction Theory</h1>
+                    <em>5 November 2021, 7 mins read</em>
                     <br><br>
 
-                    <h3>Header 1</h3>
-                    <p>Insert text here. </p><br>
+                    <h3>Introduction to Auction</h3><br>
+                    <p>Auction theory is used to understand and simulate real-world auctions. Asymmetry of information plays a big part in auctions. </p><br>
+                    <p>Auctions are economic games and can only happen with the support of the <strong>theory of common value and private value</strong>. It depends on the private value of the bidder based on their assumptions and information they know. </p><br>
+                    <p>Auction can also assist in the <strong>price discovery</strong> of something of unknown value. Bidders bid with the value they think the valuation of the auctioned item has. </p><br>
+                    <p>Not everything is worth auctioning. If something can be manufactured at the same cost, it is not worth auctioning. </p><br>
+                    <p>There is an exception, if there's a <strong>shortage</strong>, an auction might happen, where people bid at a higher price than the item's value due to the deficiency in supply.</p><br>
 
-                    <h3>Header 2</h3>
-                    <ol>
-                        <li>Point 1</li>
-                        <li>Point 2</li>
-                        <li>Point 3</li>
-                    </ol><br>
+                    <h3>Auction Models</h3><br>
+                    <ul>
+                        <li><strong>English Auction / Oral Ascending Auction</strong>
+                            <ul><li>The usual auction model we see in movies. Bidders <strong>start low</strong> and increase their bids. Highest bidder pays the highest bid, which is their own bid. </li>
+                                <li>Scenario: Bidder thinks item is worth $100. Bidder will place bid as long as bid is lower than $100. </li>
+                            </ul></li><br>
+                        <li><strong>Sealed bid / Pay as Bid Auction</strong>
+                            <ul><li>Bidders write their <strong>bid in envelopes</strong>. Auctioneer discloses bid all at once to see who is the highest bidder. Highest bidder pays the highest bid, which is their own bid. </li>
+                                <li>Scenario: Bidder thinks item is worth $100. Bidder will write bid with the highest profit margin based on information available to them. If they think other bidders value the item at $80, the bidder will bid at a price slightly greater than $80. </li>
+                            </ul></li><br>
+                        <li><strong>Dutch Auction / Tulips Auction</strong>
+                            <ul><li>The opposite of English auction, auctioneer <strong>starts at a high bid value</strong> and decreases until a bidder bids. First bidder pays the bid price. </li>
+                                <li>The outcome will be similar to a sealed bid. Bidders do not know other bidders' valuation on the item, therefore bids are only based on their private valuation. </li>
+                                <li>Scenario: Same as sealed bid. </li>
+                            </ul></li><br>
+                        <li><strong>Vickrey Auction</strong>
+                            <ul><li>This is the brain child of  the Nobel Prize Award Winner, <strong><a href="https://en.wikipedia.org/wiki/William_Vickrey">William Vickrey</a></strong>. </li>
+                                <li>Just like sealed bid, but the highest bidder <strong>pays the second highest bid</strong>. </li>
+                                <li>Scenario: Bidder thinks item is worth $100. Bidder will bid at a slightly higher price as long as the second place bid is less than $100. </li>
+                                <li>This auction model allows bidders to understand their likely competition and how much the competition will be willing to pay. It allows the bidders to be more aggressive in the process. </li>
+                            </ul></li>
+                    </ul><br>
 
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt="" width=auto height=300px></p><br>
+                    <h3>How to make money with different auction models?</h3><br>
+                    <p>Assume that my valuation of the auctioned item is <strong>$100</strong>. </p><br>
+                    <ul>
+                        <li><strong>Sealed Bid</strong>
+                            <ul><li>I will bid $80. </li>
+                                <li>If I win, I make $20 profit. </li>
+                            </ul></li><br>
+                        <li><strong>Vickrey Auction</strong>
+                            <ul><li>I will bid $100. </li>
+                                <li>If win, I pay less than $100 and make profit because I will pay the second highest price. </li>
+                            </ul></li>
+                    </ul><br>
 
-                    <h3>Header 3</h3>
-                    <p>Maths using \(LaTeX\): \(a\geq\) \(b\)</p><br>
-                    <p>$$Equation = \sum^N_{i=0}x_i - \cos \pi$$</p><br>
+                    <h5>Note</h5>
+                    <p><strong>Valuation is key. </strong></p>
+                    <p>In an English auction, if I know other rational bidders are willing to bid at my price range, I will be willing to pay more for it. This will make other bidders think I am willing to bid in their price range, then they will increase their bid. Loop continues until all but one gives up. </p><br>
 
+                    <h3>Price Wars and Property Rights</h3><br>
+                    <p>Imagine an auction where the <strong>top 2 highest bidders</strong> have to pay but only the highest bidder wins the auction. </p><br>
+                    <p>Scenario: The item has value <strong>$100</strong>. More bidders pull out as the bid is about to reach the valuation of $100, except the two highest bidders (let's say Bid A: $90 and Bid B: $95). If they stop here, Bidder B will make $5 profit, Bidder A will lose $90. So Bidder A will increase their bid. Now, Bid A: $100, Bid B: $95, Bidder A breaks even, Bidder B will lose $95. Loop will continue until one gives up. Both are reducing losses <strong>individually</strong> but they are increasing losses <strong>collectively</strong>. </p><br>
+                    <p>In price wars, bidders will sacrifice more and more resources in order to win in the wars, but what is not obvious to the eyes is the collective loss that will happen in order to win something that is valued at a far lower value than what has been sacrificed. </p><br>
+                    <p>Same goes to territorial rights, bidders send in troops to fight, in hope to win the war, say <strong>both parties send $450k worth of troops to fight for $500k worth of land</strong>. Only one will win. In the midst of the war, one party sees that their troop is losing and <strong>sends in $100k more worth of troop</strong>, thinking that they pay a total of $550k of troop to win $500k of land instead of $450k troop for nothing. The table is turned. another party sees they are losing, sends in $100k worth of troop. Loop repeats until one is out of resources or surrenders. In the end, the both party make losses, with the <strong>winning party losing $500k less than the losing party</strong>. </p><br>
+
+                    <h3>Conclusion</h3><br>
+                    <p>Bidders rely heavily of format and information to win auctions which involves a lot of economic theories, strategies to maximize utilities, and game theory. </p><br>
+                    <p>More improvements and inventions of formats are made towards the auction theory and there will be more to come, like the <strong><a href="https://www.nobelprize.org/prizes/economic-sciences/2020/summary/">2020 Nobel Prize in Economic Sciences</a></strong> award winners, <strong>Paul R. Milgrom</strong> and <strong>Robert B. Wilson</strong>, who have done extensive research to come up with improvements for the auction theory. </p>
 
                 </div>
 
