@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blog - Lee Kai Han Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- See http://docs.mathjax.org/en/latest/web/start.html#using-mathjax-from-a-content-delivery-network-cdn -->
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img src="/assets/img/profile-image.jpg" alt="" class="img-fluid rounded-circle">
+                <h1 class="text-light"><a href="/#">Lee Kai Han</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a href="https://www.linkedin.com/in/kaihanlee/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/kaihanlee" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+
+                </div>
+            </div>
+
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="/#"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                    <li><a href="/about"><i class="bx bx-user"></i> <span>About Me</span></a></li>
+                    <li><a href="/experiences"><i class="bx bx-file-blank"></i> <span>Experiences</span></a></li>
+                    <li><a href="/projects"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
+                    <li><a href="/blog"><i class="bx bx-pencil"></i> <span>Blog</span></a></li>
+                    <li><a href="/contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h1>Chinese Moon Blocks</h1>
+                    <em>12 December 2021, 6 mins read</em>
+                    <br><br>
+
+                    <h3>Introduction</h3>
+                    <p>I am of Chinese descent and there is this tradition that my older relatives at home do, known as 擲筊 or Poe Divination / Chinese Moon Blocks, to seek divine guidance and get "Yes" or "No" answers from the Gods.</p><br>
+                    <p>There are two moon-shaped blocks made of wood, each one with one curved and one flat surface. To use it, one holds both blocks in their hands and ask the questions in their heart, then throw the blocks on the floor.</p><br>
+                    <ul>
+                        <li>If both blocks show the flat side up, it's a "laughing answer" (笑筊) or known as the Gods are laughing the question off. In this case, usually a re-throw will be performed.</li><br>
+                        <li>If both blocks show the flat side down, it's a "crying answer" (哭筊) or a "No".</li><br>
+                        <li>If the blocks show a flat side and a curved side each, it's a "divine answer" (聖筊) or a "Yes".</li><br>
+                    </ul>
+                    <p>While looking at the people performing this ritual, I wonder to myself, what actually are the odds? In particular, (1) what is the probability of getting a Flat from one block? and (2) how does the re-throw affect the final outcome?</p><br>
+
+                    <h3>One Block</h3>
+                    <p>This scenario is exactly the same as using a coin, just different probabilities. Research has shown that moon blocks have around 5% deviation from zero mean, which means that there is a 45%-55% chance that it will land on the Flat face.</p><br>
+
+                    <h3>Simulation</h3>
+                    <p>Suppose \(q\) is the probability of landing with the Flat face pointing downwards. \(q\) will take values from 0.01 to 1, with increment of 0.01.</p><br>
+                    <p>A "throw" function is created to simulate one throw of a pair of moon blocks. With the aforementioned scenarios, i.e. both Flats pointing up/down, and one up one down, the "throw" function tags them as "Yes", "No", or "Laugh". If a "Laugh" is thrown, a re-throw will be performed. This simulation will run for \(n=1000\) iterations, and the sum of "Yes" will be recorded.</p><br>
+
+                    <h3>Results</h3>
+                    <p>As the value of \(q\) increases, it is observed that the proportion of "Yes" decreases, in other words the proportion of "No" increases, as Flat sides tend to be downwards and result in "No".</p><br>
+                    <p>It is also observed that when \(q = 0.50\), proportion of "Yes" is approximately \(0.67\) or \(2/3\).</p><br>
+
+                    <h3>Calculations</h3>
+                    <p>Suppose \(1\) is a FlatUp, \(0\) is a FlatDown, and \(q = 0.50\). The sample space for the throw of a pair of moon blocks is \({(0, 0), (0, 1), (1, 0), (1, 1)}\). The \((0, 1)\) or \((1, 0)\) "Yes" scenarios have probability \(2/4\) respectively, \((1, 1)\) "Laugh" re-throw and \((0, 0)\) "No" has probability \(1/4\) respectively.</p><br>
+                    <p>When a "Laugh" is encountered, the re-throw will repeat until we reach a "Yes" or a "No", which means the probability of getting a "Yes" is the sum of a geometric progression with initial term \(1/2\), common ratio \(1/4\), and an infinite number of terms. Therefore, the sum is \(2/3\).</p><br>
+                    <p>Using a Binomial probability function, we can also show that with 2 trials (as in 2 moon blocks), 1 success, and 0.5 success probability (as in one FlatUp and one FlatDown to result in a "Yes"), the chances of getting a "Yes" is \(P(n = 2, x = 1, q = 0.5) = nCx * q * (1 - q) = 0.5\)</p><br>
+                    <p>Suppose \(p\) is the probability of only "Yes" (excluding "Laugh"), we can also plot of graph of \(q\) against \(p\). It is observed that even when \(q\) fluctuates around \(0.40\) to \(0.60\), \(p\) will take value \(0.48\).</p><br>
+                    <p>Furthermore, when \(q = 0.40\) and \(q = 0.60\), the simulated probability of "Yes" is still fairly high at approximately \(0.57\) to \(0.76\), only a difference of less than \(10\)% from when \(q = 0.50\).</p><br>
+
+                    <h3>Other Scenarios</h3>
+                    <p>Some people throw a Best of 3 or 3 consecutive "Yes" or "No" for the answer to count.</p><br>
+                    <p>For a Best of 3, the outcome must be at least 2 "Yes". So, possible events are \(YYN\), \(YNY\), \(NYY\), and \(YYY\). Probability is \(3 * ((2/3)^2 * (1/3)) + (2/3)^3 = 20/27 ≈ 0.741\).</p><br>
+                    <p>For 3 consecutive "Yes", the only possible event is \(YYY\) with probability \((2/3)^3 = 8/27 ≈ 0.296\).</p><br>
+
+                    <h3>Conclusion</h3>
+                    <p>From a mathematics perspective, it is definitely not a fair play with "Yes" appearing twice as many times as "No". Personally, I am not a believer, but from a believer's perspective, they might believe that there are external forces influencing the outcome. You do you.</p><br>
+
+                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt="" width=auto height=300px></p><br>
+
+
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="credits">
+                <span>&copy</span> Designed by <strong>Lee Kai Han</strong>
+                <div class="credits">
+                    Powered by BootstrapMade
+                </div>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/typed.js/typed.min.js"></script>
+    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
