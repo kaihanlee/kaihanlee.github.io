@@ -85,6 +85,11 @@
                     </ul>
                     <p>While looking at the people performing this ritual, I wonder to myself, what actually are the odds? In particular, (1) what is the probability of getting a Flat from one block? and (2) how does the re-throw affect the final outcome?</p><br>
 
+                    <figure>
+                    <p style="text-align:center;"><img src="/blog/poe-divination/img/moon-blocks.jpeg" alt="" width=auto height=300px></p><br>
+                    <figcaption style="text-align:center;">Image from https://renz15.wordpress.com/tag/moon-blocks/</figcaption>
+                    </figure>
+
                     <h3>One Block</h3>
                     <p>This scenario is exactly the same as using a coin, just different probabilities. Research has shown that moon blocks have around 5% deviation from zero mean, which means that there is a 45%-55% chance that it will land on the Flat face.</p><br>
 
@@ -155,8 +160,28 @@ plot(q, probability)
 
 # probability of "Yes" if the moon blocks have equal probability of landing "FlatUp" or "FlatDown"
 probability[length(q)/2]
-    # [1] 0.674
                     </code></pre>
+
+                    <pre><codeoutput>
+> probability
+  [1] 0.996 0.991 0.984 0.983 0.984 0.978 0.960 0.960 0.954
+ [10] 0.958 0.946 0.927 0.927 0.920 0.938 0.909 0.896 0.898
+ [19] 0.894 0.892 0.875 0.875 0.876 0.859 0.848 0.866 0.831
+ [28] 0.835 0.826 0.828 0.829 0.834 0.821 0.807 0.802 0.772
+ [37] 0.756 0.782 0.736 0.758 0.708 0.728 0.725 0.713 0.703
+ [46] 0.724 0.706 0.677 0.682 0.674 0.681 0.654 0.621 0.632
+ [55] 0.632 0.638 0.609 0.585 0.608 0.566 0.541 0.546 0.538
+ [64] 0.549 0.509 0.543 0.515 0.473 0.469 0.464 0.461 0.445
+ [73] 0.451 0.431 0.412 0.421 0.382 0.379 0.351 0.324 0.333
+ [82] 0.312 0.258 0.276 0.262 0.239 0.229 0.213 0.196 0.184
+ [91] 0.156 0.151 0.129 0.121 0.110 0.066 0.055 0.035 0.024
+[100] 0.000
+
+> probability[length(q)/2]
+[1] 0.674
+                    </codeoutput></pre>
+
+                    <p style="text-align:center;"><img src="/blog/poe-divination/img/q_against_probability.PNG" alt="" width=auto height=300px></p><br>
 
                     <h3>Calculations</h3>
                     <p>Suppose \(1\) is a FlatUp, \(0\) is a FlatDown, and \(q = 0.50\). The sample space for the throw of a pair of moon blocks is \({(0, 0), (0, 1), (1, 0), (1, 1)}\). The \((0, 1)\) or \((1, 0)\) "Yes" scenarios have probability \(2/4\) respectively, \((1, 1)\) "Laugh" re-throw and \((0, 0)\) "No" has probability \(1/4\) respectively.</p><br>
@@ -171,10 +196,18 @@ abline(v=c(0.40, 0.60), col=c("red","green"), lty=c(2,2))
 abline(h=c(0.48), col="blue", lty=2)
 
 c(2*q[40]*(1-q[40]), 2*q[60]*(1-q[60]))
-    # [1] 0.48 0.48
 probability[c(40, 60)]
-    # [1] 0.758 0.566
                     </code></pre>
+
+                    <pre><codeoutput>
+> c(2*q[40]*(1-q[40]), 2*q[60]*(1-q[60]))
+[1] 0.48 0.48
+
+> probability[c(40, 60)]
+[1] 0.758 0.566
+                    </codeoutput></pre>
+
+                    <p style="text-align:center;"><img src="/blog/poe-divination/img/q_against_p.PNG" alt="" width=auto height=300px></p><br>
 
                     <h3>Other Scenarios</h3>
                     <p>Some people throw a Best of 3 or 3 consecutive "Yes" or "No" for the answer to count.</p><br>
@@ -183,10 +216,6 @@ probability[c(40, 60)]
 
                     <h3>Conclusion</h3>
                     <p>From a mathematics perspective, it is definitely not a fair play with "Yes" appearing twice as many times as "No". Personally, I am not a believer, but from a believer's perspective, they might believe that there are external forces influencing the outcome. You do you.</p><br>
-
-                    <p style="text-align:center;"><img src="/blog/reinforcement-learning/img/1.jpg" alt="" width=auto height=300px></p><br>
-
-
 
                 </div>
 
