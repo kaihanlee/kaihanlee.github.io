@@ -90,11 +90,73 @@
 
                     <h3>Simulation</h3>
                     <p>Suppose \(q\) is the probability of landing with the Flat face pointing downwards. \(q\) will take values from 0.01 to 1, with increment of 0.01.</p><br>
-                    <p>A "throw" function is created to simulate one throw of a pair of moon blocks. With the aforementioned scenarios, i.e. both Flats pointing up/down, and one up one down, the "throw" function tags them as "Yes", "No", or "Laugh". If a "Laugh" is thrown, a re-throw will be performed. This simulation will run for \(n=1000\) iterations, and the sum of "Yes" will be recorded.</p><br>
+                    <p>A <code>throw</code> function is created to simulate one throw of a pair of moon blocks. With the aforementioned scenarios, i.e. both Flats pointing up/down, and one up one down, the <code>throw</code> function tags them as "Yes", "No", or "Laugh". If a "Laugh" is thrown, a re-throw will be performed. This simulation will run for \(n=1000\) iterations, and the sum of "Yes" will be recorded.</p><br>
+
+                    <pre><code>
+throw <- function(q){
+
+  # initialize throw
+  outcome = "Laugh"
+
+  # repeat throws if "Laugh" is obtained, until "Yes" or "No" is obtained
+  while (outcome == "Laugh"){
+
+    # randomly simulate block throw outcomes
+    # probability q of Flat pointing downwards
+    # probability 1-q of Flat pointing upwards
+    block1 = ifelse(runif(1)>q, "FlatUp", "FlatDown")
+    block2 = ifelse(runif(1)>q, "FlatUp", "FlatDown")
+
+    # determine final outcome depending on both blocks
+    # Both FlatUp = "Laugh"
+    # Both FlatDown = "No"
+    # A FlatUp and A FlatDown = "Yes"
+    outcome = ifelse(block1 == "FlatUp" & block2 == "FlatUp", "Laugh",
+                     ifelse(block1 == "FlatDown" & block2 == "FlatDown", "No", "Yes"))
+  }
+
+  return(outcome)
+}
+                      </code></pre>
 
                     <h3>Results</h3>
                     <p>As the value of \(q\) increases, it is observed that the proportion of "Yes" decreases, in other words the proportion of "No" increases, as Flat sides tend to be downwards and result in "No".</p><br>
                     <p>It is also observed that when \(q = 0.50\), proportion of "Yes" is approximately \(0.67\) or \(2/3\).</p><br>
+
+                    <pre><code>
+# list of probabilities q (in %)
+# exclude 0% because the outcome will always be "Laugh" which results in a re-throw
+q = seq(0.01,1.00,0.01)
+
+# number of iterations
+iter = 1000
+
+# matrix to store
+outcome_matrix = matrix(rep(0, length(q)*iter), ncol=length(q), nrow=iter)
+colnames(outcome_matrix) = q
+rownames(outcome_matrix) = 1:iter
+count = rep(0,length(q))
+
+for (j in 1:length(q)){
+
+  for (i in 1:iter){
+    # categorize outcome as binary
+    outcome_matrix[i,j] = ifelse(throw(q[j])=="Yes",1,0)
+  }
+
+  # count number of "Yes"'s
+  count[j] = sum(outcome_matrix[,j])
+
+}
+
+# calculate probability of "Yes" for each value of q
+probability = count / iter
+plot(q, probability)
+
+# probability of "Yes" if the moon blocks have equal probability of landing "FlatUp" or "FlatDown"
+probability[length(q)/2]
+    # [1] 0.674
+                    </code></pre>
 
                     <h3>Calculations</h3>
                     <p>Suppose \(1\) is a FlatUp, \(0\) is a FlatDown, and \(q = 0.50\). The sample space for the throw of a pair of moon blocks is \({(0, 0), (0, 1), (1, 0), (1, 1)}\). The \((0, 1)\) or \((1, 0)\) "Yes" scenarios have probability \(2/4\) respectively, \((1, 1)\) "Laugh" re-throw and \((0, 0)\) "No" has probability \(1/4\) respectively.</p><br>
@@ -102,6 +164,17 @@
                     <p>Using a Binomial probability function, we can also show that with 2 trials (as in 2 moon blocks), 1 success, and 0.5 success probability (as in one FlatUp and one FlatDown to result in a "Yes"), the chances of getting a "Yes" is \(P(n = 2, x = 1, q = 0.5) = nCx * q * (1 - q) = 0.5\)</p><br>
                     <p>Suppose \(p\) is the probability of only "Yes" (excluding "Laugh"), we can also plot of graph of \(q\) against \(p\). It is observed that even when \(q\) fluctuates around \(0.40\) to \(0.60\), \(p\) will take value \(0.48\).</p><br>
                     <p>Furthermore, when \(q = 0.40\) and \(q = 0.60\), the simulated probability of "Yes" is still fairly high at approximately \(0.57\) to \(0.76\), only a difference of less than \(10\)% from when \(q = 0.50\).</p><br>
+
+                    <pre><code>
+plot(q, 2*q*(1-q), type="l")
+abline(v=c(0.40, 0.60), col=c("red","green"), lty=c(2,2))
+abline(h=c(0.48), col="blue", lty=2)
+
+c(2*q[40]*(1-q[40]), 2*q[60]*(1-q[60]))
+    # [1] 0.48 0.48
+probability[c(40, 60)]
+    # [1] 0.758 0.566
+                    </code></pre>
 
                     <h3>Other Scenarios</h3>
                     <p>Some people throw a Best of 3 or 3 consecutive "Yes" or "No" for the answer to count.</p><br>
