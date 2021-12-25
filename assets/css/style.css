@@ -828,6 +828,24 @@ pre codeoutput {
   width: 800px;
 }
 
+.blockquote {
+    max-width: 600px;
+    margin: 10px 30px;
+    padding: 25px;
+    background: #f8fffe;
+    border: 1px solid #b0d2cb;
+    color: #0b4237;
+    box-sizing: border-box;
+}
+
+.blockquote__text {
+    font-family: 'Gelasio', serif;
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
