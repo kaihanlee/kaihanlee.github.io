@@ -829,7 +829,6 @@ pre codeoutput {
 }
 
 .blockquote {
-    max-width: 600px;
     margin: 10px 30px;
     padding: 25px;
     background: #f8fffe;
