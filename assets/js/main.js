@@ -251,7 +251,7 @@
 })()
 
 // Function to calculate and update the age
-function updateAge() {
+(function updateAge() {
     // Enter your birth year here
     var birthYear = 1999;
 
@@ -259,4 +259,4 @@ function updateAge() {
     var age = currentYear - birthYear;
 
     document.getElementById("age").textContent = age;
-}
+})()
