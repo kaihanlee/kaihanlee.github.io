@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Traffic Counter</title>
+</head>
+<body>
+    <h1>GitHub Traffic Counter</h1>
+    <p>Visits today: <span id="visitsToday"></span></p>
+    <p>Visits this week: <span id="visitsThisWeek"></span></p>
+
+    <script>
+        // Your GitHub username and repository name
+        const username = "kaihanlee";
+        const repo = "kaihanlee.github.io";
+        const token = "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"; // Replace with your access token
+
+        // Get traffic data using the GitHub REST API
+        fetch(`https://api.github.com/repos/${username}/${repo}/traffic/views`, {
+            headers: {
+                Authorization: `token ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("visitsToday").textContent = data.views[0].count.toLocaleString();
+            document.getElementById("visitsThisWeek").textContent = data.views[1].count.toLocaleString();
+        })
+        .catch(error => {
+            console.error("Error fetching GitHub traffic data:", error);
+        });
+    </script>
+</body>
+</html>
