@@ -1,38 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GitHub Page Visits Tracker</title>
+    <title>Page Traffic</title>
 </head>
 <body>
-    <h1>GitHub Page Visits Tracker</h1>
-    <p>Visits to your GitHub page: <span id="visitCount"></span></p>
+    <h1>Page Traffic</h1>
+    <p>Number of visits: <span id="visitCount"></span></p>
 
     <script>
-        // Your GitHub username and repository name
-        const username = "kaihanlee";
-        const repo = "kaihanlee.github.io";
-        const path = "index.html"; // Replace with the path to your HTML page
-
-        // Your GitHub personal access token
-        const token = "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";
-
         // GitHub API endpoint URL for traffic data
-        const apiUrl = `https://api.github.com/repos/${username}/${repo}/traffic/views?path=${path}`;
+        const apiUrl = 'https://api.github.com/repos/kaihanlee/kaihanlee.github.io/traffic/views';
 
         // Fetch traffic data from the GitHub API
-        fetch(apiUrl, {
-            headers: {
-                Authorization: `token ${token}`
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const visitCount = data.count.toLocaleString();
-            document.getElementById("visitCount").textContent = visitCount;
-        })
-        .catch(error => {
-            console.error("Error fetching GitHub traffic data:", error);
-        });
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const visitCount = data.count.toLocaleString();
+                document.getElementById("visitCount").textContent = visitCount;
+            })
+            .catch(error => {
+                console.error("Error fetching GitHub traffic data:", error);
+            });
     </script>
 </body>
 </html>
