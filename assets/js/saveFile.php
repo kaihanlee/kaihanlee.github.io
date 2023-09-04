@@ -5,7 +5,7 @@ if (isset($_POST['content'])) {
     $content = $_POST['content'];
 
     // File path where you want to save the text file (within the src folder)
-    $filePath = 'src/savedFile.txt';
+    $filePath = 'assets/js/savedFile.txt';
 
     // Save the content to the file
     if (file_put_contents($filePath, $content) !== false) {
