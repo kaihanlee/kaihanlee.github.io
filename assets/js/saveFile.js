@@ -1,4 +1,4 @@
-document.getElementById("createFileButton").addEventListener("click", async function() {
+document.getElementById("saveButton").addEventListener("click", async function() {
     const octokit = new Octokit({ auth: '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' }); // Replace with your GitHub access token
 
     const repositoryOwner = 'kaihanlee';
