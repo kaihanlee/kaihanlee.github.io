@@ -1,16 +1,27 @@
-document.getElementById("saveButton").addEventListener("click", function() {
-    // Text content for the file
-    const textContent = "This is the content of the text file.";
+document.getElementById("createFileButton").addEventListener("click", async function() {
+    const octokit = new Octokit({ auth: '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' }); // Replace with your GitHub access token
 
-    // Send an AJAX request to the server to save the file
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "saveFile.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // File has been saved on the server
-            alert("File saved successfully.");
+    const repositoryOwner = 'kaihanlee';
+    const repositoryName = 'kaihanlee.github.io';
+    const filePath = 'assets/js/new-file.txt'; // Specify the path and name of the new file
+    const fileContent = 'This is the content of the new file.';
+
+    try {
+        const response = await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+            owner: repositoryOwner,
+            repo: repositoryName,
+            path: filePath,
+            message: 'Create new file',
+            content: Buffer.from(fileContent).toString('base64')
+        });
+
+        if (response.status === 201) {
+            alert('File created successfully.');
+        } else {
+            alert('Failed to create the file.');
         }
-    };
-    xhr.send("content=" + encodeURIComponent(textContent));
+    } catch (error) {
+        console.error('Error creating the file:', error);
+        alert('An error occurred while creating the file.');
+    }
 });
