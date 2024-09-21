@@ -12,3 +12,5 @@ Main page can be found at https://kaihanlee.github.io.
 **contact.html**: Contact details  
   
 **add_blog.txt**: Guide to add new blog links to GitHub portfolio
+
+Test
